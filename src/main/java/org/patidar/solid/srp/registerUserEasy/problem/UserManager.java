@@ -1,4 +1,4 @@
-package org.patidar.solid.srp.registerUser.problem;
+package org.patidar.solid.srp.registerUserEasy.problem;
 
 class UserManager {
 

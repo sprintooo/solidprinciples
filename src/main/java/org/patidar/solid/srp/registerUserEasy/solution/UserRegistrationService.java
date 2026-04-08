@@ -1,4 +1,4 @@
-package org.patidar.solid.srp.registerUser.solution;
+package org.patidar.solid.srp.registerUserEasy.solution;
 
 /**
  * Responsibility: Orchestrating the user registration workflow

@@ -1,4 +1,4 @@
-package org.patidar.solid.srp.registerUser.solution;
+package org.patidar.solid.srp.registerUserEasy.solution;
 
 import org.springframework.stereotype.Service;
 
