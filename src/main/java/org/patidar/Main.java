@@ -1,17 +1,26 @@
 package org.patidar;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import org.patidar.solid.srp.registerUser.solution.*;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== SRP Solution Demo ===\n");
+
+        // Create the dependencies manually (without Spring DI for simplicity)
+        UserRepository userRepository = new MySQLUserRepository();
+        EmailService emailService = new SMTPEmailService();
+
+        // Create the registration service with dependencies
+        UserRegistrationService registrationService = new UserRegistrationService(userRepository, emailService);
+
+        // Register a user
+        registrationService.registerUser("John Doe", "john.doe@example.com");
+
+        System.out.println("\n=== Registration Complete ===");
+        System.out.println("\nBenefits of this approach:");
+        System.out.println("1. Each class has a single responsibility");
+        System.out.println("2. Changes to email logic don't affect database or logging code");
+        System.out.println("3. Easy to test each component independently");
+        System.out.println("4. Easy to replace implementations (e.g., switch email provider)");
     }
 }
