@@ -17,6 +17,12 @@ public class Main {
         System.out.println("=== SRP Demo: Order Placement ===\n");
         OrderServiceDemo.runDemo();
 
+        System.out.println("\n");
+
+        // Demo 3: Amazon Order Placement (SRP - Advanced)
+        System.out.println("=== SRP Demo: Amazon Order Placement (Advanced) ===\n");
+        org.patidar.solid.srp.amazonOrderHard.solution.OrderServiceDemo.runDemo();
+
         System.out.println("\nSRP Benefits:");
         System.out.println("1. Each class has a single responsibility");
         System.out.println("2. Changes to email logic don't affect database or payment code");
